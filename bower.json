@@ -1,0 +1,17 @@
+{
+  "name": "robotlabcg-web",
+  "description": "Landing page for RobotLab CG",
+  "main": "index.js",
+  "authors": [
+    "Jordan Miller"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
