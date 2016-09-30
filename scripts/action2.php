@@ -3,10 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once 'phpmailer/PHPMailerAutoload.php';
 
-if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage'])) {
+if (isset($_POST['email'])) {
 
     //check if any of the inputs are empty
-    if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputSubject']) || empty($_POST['inputMessage'])) {
+    if (empty($_POST['email'])) {
         $data = array('success' => false, 'message' => 'Please fill out the form completely.');
         echo json_encode($data);
         exit;
@@ -15,11 +15,11 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     //create an instance of PHPMailer
     $mail = new PHPMailer();
 
-    $mail->From = $_POST['inputEmail'];
-    $mail->FromName = $_POST['inputName'];
-    $mail->AddAddress('something@test.com'); //recipient 
-    $mail->Subject = $_POST['inputSubject'];
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
+    $mail->From = $_POST['email'];
+    $mail->FromName = 'site user';
+    $mail->AddAddress('jordan@robotlabcg.com'); //recipient 
+    $mail->Subject = 'sign up request';
+    $mail->Body = "Name: " . $_POST['email']);
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
@@ -40,3 +40,4 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     echo json_encode($data);
 
 }
+?>

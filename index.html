@@ -27,6 +27,7 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="app.js"></script>
     
   <!--  <link rel="stylesheet" href="css/form.css" />-->
@@ -40,13 +41,10 @@
 
 			<div class="hp_copy"><p><strong>The color matching, science inspired robot building game for all ages.</strong></p></div>
 
-
-
 			<p class="form-error" ng-show="formError">there was an error submitting your email, try again later.</p>
 			<div class="form_stuff" ng-show="showForm">
-				<p>Email sign up comming soon</p>
-				<!-- <p>Enter your email address and you'll get exclusive notification before our kickstarter goes live!</p> -->
-				<!-- <form action='' method='post' id='contact_form'>
+				<p>Enter your email address and you'll get exclusive notification before our kickstarter goes live!</p>
+				<form action='' method='post' id='contact_form'>
 						<div id="form_group">
 							<label for="Email" id="Email_label">Email:</label>
 							<input type='text' name='Email' id='email' ng-model="email" tabindex=3/>
@@ -54,7 +52,7 @@
 						<p id='cf_submit_p'>
 							<input class="contact_cta" type='button' ng-click="signup()" id='send_message' value='Submit' tabindex=7/>
 						</p>
-				</form> -->
+				</form>
 			</div>
 			<!-- thank you form -->
 			<div ng-hide="showForm">

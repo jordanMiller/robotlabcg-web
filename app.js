@@ -10,18 +10,20 @@ app.controller('LandingPageCtrl', ['$scope','$http', '$log', function ($scope,$h
 	$scope.signup = function(){
 		alert($scope.email);
 		var data = {'email' : $scope.email};
-		var successCallback = function(response){
-
-		};
-
-		$http.post('./scripts/action.php',data).success(function (data,status){
-			if(data.success) {
+			
+		$http({
+			method : 'POST',
+			url : 'scripts/action2.php',
+			data : $.param(data),
+			headers : {'Content-Type' : 'application/x-www-form-urlencoded'}
+		}).success(function(data){
+			$log.debug(data);
+			if (data.success){
 				$scope.showForm = false;
-				alert('did the thing');
+			} else {
+				$scope.formError = true;
+				$log.error(data.message);
 			}
-		}).error(function(data,status){
-			$log.error('There was an error submitting the email address');	
-			$scope.formError = true;
 		});
 
 	};
