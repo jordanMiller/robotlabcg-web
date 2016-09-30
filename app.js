@@ -3,5 +3,12 @@
 var app = angular.module('app',[]);
 
 app.controller('LandingPageCtrl', ['$scope',function ($scope){
-	$scope.mainHeading = "Robot Lab Card Game"; 
+	$scope.email;
+	$scope.showForm = true;
+
+	$scope.signup = function(){
+		alert($scope.email);
+		$scope.showForm = false;	
+	};
+
 }]);
